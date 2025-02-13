@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haloo Friscyla</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-family: "Arial", sans-serif;
+        overflow: hidden;
+      }
+      .welcome-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 3s ease-in-out forwards;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .enter-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .enter-button:hover {
+        transform: scale(1.1);
+      }
+      .animation-container {
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      @keyframes chase {
+        0% {
+          left: 0;
+        }
+        40% {
+          left: 45%;
+        }
+        50% {
+          left: 50%;
+        }
+        60% {
+          left: 50%;
+        }
+        100% {
+          left: 10%;
+        }
+      }
+      @keyframes moveIdris {
+        0% {
+          right: 0;
+        }
+        40% {
+          right: 45%;
+        }
+        50% {
+          right: 50%;
+        }
+        60% {
+          right: 50%;
+        }
+        100% {
+          right: 90%;
+        }
+      }
+      .friscyla,
+      .idris {
+        position: absolute;
+        bottom: 0;
+        width: 80px;
+        height: 80px;
+      }
+      .friscyla {
+        left: 0;
+        animation: chase 10s linear forwards;
+      }
+      .idris {
+        right: 0;
+        animation: moveIdris 10s linear forwards;
+      }
+      .conversation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        border-radius: 10px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welcome-container">
+      <h1>Hallo Sayang💖</h1>
+      <button class="enter-button" onclick="window.location.href='flower.html'">
+        Klik Dong
+      </button>
+    </div>
+    <div class="animation-container">
+      <img src="friscyla.png" class="friscyla" alt="Friscyla" />
+      <img src="idris.png" class="idris" alt="Idris" />
+    </div>
+    <script>
+      setTimeout(() => {
+        document.getElementById("conversation").style.display = "block";
+      }, 5000);
+      setTimeout(() => {
+        document.getElementById("conversation").style.display = "none";
+      }, 10000);
+    </script>
+  </body>
+</html>
